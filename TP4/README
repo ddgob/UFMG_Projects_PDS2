@@ -1,0 +1,42 @@
+Nesse exercício você deverá criar dois TADs utilizando Structs, são eles: Ponto2D e Triangulo.
+
+Ponto2D deve possuir pelo menos um construtor que recebe dois parâmetros (x, y) do tipo double. Ele também deve possuir o seguinte método:
+'double calcular_distancia(Ponto2D* ponto)': que calcula a distância euclidiana para outro ponto no plano.
+
+Triangulo deve possuir pelo menos um construtor que recebe três parâmetros (p1, p2, p3) do tipo Ponto2D (não devem ser utilizados ponteiros). Você deve decidir como armazená-los dentro do TAD. Esses pontos representam os vértices do triângulo. Você também deve implementar as seguintes funções nesse TAD:
+'double calcular_area()': Não recebe parâmetros e retorna a área do triângulo. Dica: existem diferentes maneiras para se calcular a área a partir dos vértices, por exemplo, usando a fórmula de Heron.
+
+'double calcular_perimetro()': Não recebe parâmetros e retorna o perímetro do triângulo. Utilize o método 'calcular_distancia' de Ponto2D para auxiliar no cálculo.
+
+'int comparar_area(Triangulo *triangulo)': Recebe como parâmetro um ponteiro para outro elemento do tipo Triangulo. O retorno segue as seguintes regras:
+   a) Se a área do triangulo atual for MENOR que a área do triângulo informado como entrada, retorna: -1
+
+   b) Se a área for IGUAL (considere até a segunda casa decimal), retorna: 0
+
+   c) Se a área for MAIOR, retorna: 1
+
+
+Como entrada são fornecidos 6 pontos (x, y) no total, onde os 3 primeiros são relativos aos vértices de um Triangulo, e os últimos 3 pontos relativos aos vértices do outro Triangulo.
+
+OBS: Nesse exercício você *não* precisa implementar a função main! A mesma já está implementada e simula o caso em que o usuário do TAD conhece apenas o contrato definido no arquivo .HPP. Ou seja, a leitura dos dados de entrada já está implementada, e você deve apenas implementar os TADs.
+
+Exemplo de entrada/saída:
+
+input = 
+2.0 2.0
+2.0 5.0
+4.0 2.0
+4.0 5.0
+4.0 8.0
+6.0 5.0
+
+output =
+3.00 3.00
+8.61 8.61
+0 0
+
+
+
+Você copiar copiar o arquivo main.cpp aqui caso queira testar localmente.
+
+Arquivos requeridos: Ponto2D.hpp Ponto2D.cpp Triangulo.hpp Triangulo.cpp

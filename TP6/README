@@ -1,0 +1,42 @@
+O objetivo desse exercício é praticar o uso de diferentes estruturas da STL. Você deverá desenvolver um programa que será responsável por manipular e manter um histórico de cotações de diferentes ações. Para isso, você deverá criar dois TADs utilizando Structs: Cotacao e HistoricoBovespa.
+
+O TAD Cotacao será usado guardar dois atributos: data (do tipo string) e valor (do tipo double). Deve ser feito um construtor que recebe esses dois atributos como parâmetros nessa ordem. Lembre-se de também implementar os métodos auxiliares get/set (utilize a notação com underline).
+HistoricoBovespa é responsável por guardar uma coleção de cotações para diferentes ações. Cada ação é identificada por uma sigla (do tipo string). O TAD deve possuir um construtor padrão sem parâmetros e implementar as seguintes funções: 
+'void inserir_cotacao(string sigla, string data, double valor)': responsável por inserir um novo histórico de cotação para uma determinada determinada ação. 
+
+ 'double calcular_valor_medio_acao(string sigla)': calcula o valor médio das cotações para uma determinada ação. 
+
+'Cotacao* recuperar_cotacao_maxima_acao(string sigla)': encontra e retorna um ponteiro para a cotação de MAIOR valor associada a ação informada. Se a ação (sigla) não possuir histórico deve retornar 'nullptr'. 
+
+ 'Cotacao* recuperar_cotacao_minima_acao(string sigla)': encontra e retorna um ponteiro para a cotação de MENOR valor associada a ação informada. Se a ação (sigla) não possuir histórico deve retornar 'nullptr'. 
+
+'void imprimir_estatisticas_completas()': imprime um sumário completo das ações, onde para cada ação (sigla) lista os valores informados das cotações, seguido pelos valores MÍNIMO, MAXIMO e MÉDIO. Os valores informados e os específicos devem ser separados pelo símbolo "pipe" (|). 
+Você é livre para implementar quaisquer outros métodos auxiliares nos TADs que julgar necessário. No arquivo main.cpp você deve implementar toda a parte de entrada/saída que será responsável por receber as cotações, preencher o histórico e imprimir ao final as informações chamando o método 'imprimir_estatisticas_completas()'.
+
+Exemplo de entrada/saída:
+
+input =
+SUZB3 22/01/2019 47.18
+JBSS3 23/10/2018 8.95
+KLBN11 11/05/2015 19.57
+BRKM5 24/10/2016 56.4
+SUZB3 03/12/2017 45.18
+JBSS3 05/09/2017 9.55
+KLBN11 09/03/2015 20.57
+BRKM5 14/07/2020 54.4
+SUZB3 31/05/2018 48.18
+JBSS3 05/02/2016 7.95
+KLBN11 30/12/2018 20.00
+BRKM5 10/11/2020 55.0
+
+output =
+BRKM5 56.40 54.40 55.00 | 54.40 56.40 55.27
+JBSS3 8.95 9.55 7.95 | 7.95 9.55 8.82
+KLBN11 19.57 20.57 20.00 | 19.57 20.57 20.05
+SUZB3 47.18 45.18 48.18 | 45.18 48.18 46.85
+
+ATENÇÃO: no VPL (Moodle), junto com a saída é impresso uma verificação básica com alguns valores que não são informados na entrada, você pode ignorá-los. Se você testar localmente na sua máquina esses valores não aparecerão.
+
+Dica: para faciliar a manipulação você pode utilizar uma estrutura do tipo map<sigla, vector<Cotacao>>. Mas atenção, lembre-se de como os elementos são guardados nos containers e como eles devem ser manipulados!
+
+Arquivos requeridos: main.cpp Cotacao.hpp Cotacao.cpp HistoricoBovespa.hpp HistoricoBovespa.cpp
